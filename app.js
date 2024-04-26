@@ -1,8 +1,12 @@
 const moves = ["r", "p", "s"];
-const extended_moves=["Rock","Paper","scissor"];
+const extended_moves = ["Rock", "Paper", "scissor"];
+
+player_win = 0;
+computer_win = 0;
 
 let images = document.querySelectorAll(".img1 ");
 let value = document.querySelector(".message");
+let score = document.querySelector(".win_count");
 
 //console.log(images);
 
@@ -22,41 +26,54 @@ images.forEach((image) => {
 
     computer_pick = moves[index];
 
-    user_pick_move=moves.indexOf(user_pick);
-    computer_pick_move=moves.indexOf(computer_pick);
+    user_pick_move = moves.indexOf(user_pick);
+    computer_pick_move = moves.indexOf(computer_pick);
 
-    console.log( user_pick_move);
+    //console.log( user_pick_move);
 
-    user_pick_name=extended_moves[user_pick_move];
-    computer_pick_name=extended_moves[computer_pick_move];
+    user_pick_name = extended_moves[user_pick_move];
+    computer_pick_name = extended_moves[computer_pick_move];
 
-
-    console.log(user_pick);
-    console.log(computer_pick);
-    
+    // console.log(user_pick);
+    // console.log(computer_pick);
 
     joint_moves = user_pick + computer_pick;
-    console.log(joint_moves);
+    //console.log(joint_moves);
     switch (joint_moves) {
-      case "rr" :
-      case "ss" :
+      case "rr":
+      case "ss":
       case "pp":
-        value.textContent="Draw!!"
+        value.textContent = "Draw!!";
+        computer_win;
+        player_win;
+
         break;
 
-        case "rp" :
-        case "ps" :
-        case "sr":
-        value.textContent="you selected *"+user_pick_name +"* computer selected "+computer_pick_name+" computer won!!";
-        
+      case "rp":
+      case "ps":
+      case "sr":
+        value.textContent =
+          "you selected *" +
+          user_pick_name +
+          "* computer selected " +
+          computer_pick_name +
+          " computer won!!";
+        computer_win++;
+
         break;
 
-        case "rs" :
-        case "pr" :
-        case "sp":
-        value.textContent="you selected "+user_pick_name+" computer selected "+computer_pick_name+ " Congratulations!!you won";
-        
-        
+      case "rs":
+      case "pr":
+      case "sp":
+        value.textContent =
+          "you selected " +
+          user_pick_name +
+          " computer selected " +
+          computer_pick_name +
+          " Congratulations!!you won";
+        player_win++;
+
+        break;
 
       // case joint_moves == "ps":
       //   value.textContent="you selected "+user_pick+" computer selected "+computer_pick;
@@ -73,6 +90,20 @@ images.forEach((image) => {
       // case joint_moves == "sp":
       //   value.textContent="you selected "+user_pick+" computer selected "+computer_pick;
       //   break;
+    }
+//to be done tomorrow using if else statement
+    switch (true) {
+      case player_win < 10:
+      case computer_win < 10:
+        score.textContent =
+          "player: " + player_win + " - " + " computer: " + computer_win;
+        break;
+
+      case player_win > 10:
+      case computer_win > 10:
+        player_win = 0;
+        computer_win = 0;
+        break;
     }
   });
 });

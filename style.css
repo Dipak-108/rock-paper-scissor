@@ -11,12 +11,22 @@ span{
     text-align: center;
     margin: 50px;
     font-size: 40px;
+    border: 2px solid red;
+}
+
+.win_count{
+    font-size: 3rem;
+    
+    
 }
 
 .container{
     
     border-radius: 20px;
     overflow: hidden;
+    align-items: center;
+    border: 2px solid saddlebrown;
+    /* max-height: 95vh; */
     
 }
 
@@ -26,7 +36,7 @@ img {
     height: 200px;
     
     border: 3px solid black;
-    border-radius: 10px;
+    border-radius: 60px;
     cursor: pointer;
 }
 
@@ -37,12 +47,7 @@ img {
    
 }
 
-button{
-    background-color: white;
-    justify-content: space-between;
-    text-align: center;
-    
-}
+
 
 img:hover{
    opacity:0.7; 
