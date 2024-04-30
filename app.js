@@ -1,8 +1,12 @@
 const moves = ["r", "p", "s"];
 const extended_moves = ["Rock", "Paper", "scissor"];
 
-player_win = 0;
-computer_win = 0;
+function setZero(){
+ return player_win = computer_win= 0;
+   
+};
+
+setZero();
 
 let images = document.querySelectorAll(".img1 ");
 let value = document.querySelector(".message");
@@ -91,18 +95,22 @@ images.forEach((image) => {
       //   value.textContent="you selected "+user_pick+" computer selected "+computer_pick;
       //   break;
     }
-//to be done tomorrow using if else statement
+    //to be done tomorrow using if else statement
     switch (true) {
+      case player_win >= 10:
+        setZero();
+        value.textContent="YAY!! you won the whole game!!"
+        break;
+      case computer_win >= 10:
+        setZero();
+        value.textContent="Darn it!! computer won the whole game!!"
+    
+        break;
+
       case player_win < 10:
       case computer_win < 10:
         score.textContent =
           "player: " + player_win + " - " + " computer: " + computer_win;
-        break;
-
-      case player_win > 10:
-      case computer_win > 10:
-        player_win = 0;
-        computer_win = 0;
         break;
     }
   });

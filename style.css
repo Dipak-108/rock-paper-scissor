@@ -11,7 +11,7 @@ span{
     text-align: center;
     margin: 50px;
     font-size: 40px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 .win_count{
@@ -25,7 +25,7 @@ span{
     border-radius: 20px;
     overflow: hidden;
     align-items: center;
-    border: 2px solid saddlebrown;
+    /* border: 2px solid saddlebrown; */
     /* max-height: 95vh; */
     
 }
