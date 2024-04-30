@@ -15,7 +15,7 @@ let score = document.querySelector(".win_count");
 //console.log(images);
 
 images.forEach((image) => {
-  var user_pick;
+  let user_pick;
   image.addEventListener("click", function (e) {
     const choose = e.currentTarget.classList;
 
@@ -61,7 +61,7 @@ images.forEach((image) => {
           user_pick_name +
           "* computer selected " +
           computer_pick_name +
-          " computer won!!";
+          " computer win a point!!";
         computer_win++;
 
         break;
@@ -74,7 +74,7 @@ images.forEach((image) => {
           user_pick_name +
           " computer selected " +
           computer_pick_name +
-          " Congratulations!!you won";
+          " Congratulations!!you win a point";
         player_win++;
 
         break;
